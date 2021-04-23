@@ -50,6 +50,9 @@ body {
 #requirements {
     margin: 10px 30px;
 }
+.requirement-symbol {
+    color: rgb(216, 76, 76);
+}
 
 #rating {
     margin: 15px 15px 25px 20px;
