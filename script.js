@@ -25,11 +25,12 @@ const includesLetters = password => {
         if (letters.includes(password[i].toLowerCase())) {
             requirementOneElem.innerHTML = '[+]';
             requirementOneElem.style.color = 'rgb(51, 161, 97)';
-            return 0;
+            return 1;
         }
-        requirementOneElem.innerHTML = '[-]';
-        requirementOneElem.style.color = 'rgb(216, 76, 76)';
     }
+    requirementOneElem.innerHTML = '[-]';
+    requirementOneElem.style.color = 'rgb(216, 76, 76)';
+    return 0;
 }
 //Function to check if password includes numbers
 const includesNumbers = password => {
@@ -37,11 +38,12 @@ const includesNumbers = password => {
         if (numbers.includes(password[i])) {
             requirementTwoElem.innerHTML = '[+]';
             requirementTwoElem.style.color = 'rgb(51, 161, 97)';
-            return 0;
+            return 1;
         }
-        requirementTwoElem.innerHTML = '[-]';
-        requirementTwoElem.style.color = 'rgb(216, 76, 76)';
     }
+    requirementTwoElem.innerHTML = '[-]';
+    requirementTwoElem.style.color = 'rgb(216, 76, 76)';
+    return 0;
 }
 //Function to check if password includes symbols
 const includesSymbols = password => {
@@ -49,20 +51,23 @@ const includesSymbols = password => {
         if (symbols.includes(password[i])) {
             requirementThreeElem.innerHTML = '[+]';
             requirementThreeElem.style.color = 'rgb(51, 161, 97)';
-            return 0;
+            return 1;
         }
-        requirementThreeElem.innerHTML = '[-]';
-        requirementThreeElem.style.color = 'rgb(216, 76, 76)';
     }
+    requirementThreeElem.innerHTML = '[-]';
+    requirementThreeElem.style.color = 'rgb(216, 76, 76)';
+    return 0;
 }
 //Function to check if password is over 8 letters
 const isOverEightLetters = password => {
     if (password.length > 8) {
         requirementFourElem.innerHTML = '[+]';
         requirementFourElem.style.color = 'rgb(51, 161, 97)';
+        return 1;
     } else {
         requirementFourElem.innerHTML = '[-]';
         requirementFourElem.style.color = 'rgb(216, 76, 76)';
+        return 0;
     }
 }
 //Function to check if password is password
@@ -70,9 +75,11 @@ const isPassword = password => {
     if (password.toLowerCase() === 'password') {
         requirementFiveElem.innerHTML = '[-]';
         requirementFiveElem.style.color = 'rgb(216, 76, 76)';
+        return 0;
     } else {
         requirementFiveElem.innerHTML = '[+]';
         requirementFiveElem.style.color = 'rgb(51, 161, 97)';
+        return 1;
     }
 }
 
@@ -80,16 +87,29 @@ const isPassword = password => {
 
 setInterval(() => {
     const password = passwordElem.value;
+    let rating = 0;
     if (password.length === 0) {
         requirements.forEach(requirement => {
             requirement.innerHTML = '[-]';
             requirement.style.color = 'rgb(216, 76, 76)';
         })
     } else {
-        includesLetters(password);
-        includesNumbers(password)
-        includesSymbols(password);
-        isOverEightLetters(password);
+        if (includesLetters(password)) {
+            rating += 1;
+        }
+        if (includesNumbers(password)) {
+            rating += 2;
+        }
+        if (includesSymbols(password)) {
+            rating += 3;
+        }
+        if (isOverEightLetters(password)) {
+            rating += 2;
+        }
+        if (password.length > 10) rating += 1;
     }
-    isPassword(password);
+    if (!isPassword(password)) {
+        rating = 'Just awful, I mean did you even try?';
+    };
+    ratingElem.innerHTML = rating;
 }, 10)
