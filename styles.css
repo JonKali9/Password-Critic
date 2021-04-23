@@ -1,9 +1,56 @@
 /*Font Imports*/
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /*Universal Rules*/
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    border: 0px solid red;
+}
+body {
+    background-color: rgb(31, 31, 31);
+    font-family: "Roboto Mono";
+    height: 600px;
+}
+
+/*Title Rules*/
+#title {
+    color: rgb(189, 189, 189);
+    margin-top: 25vh;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*Box Rules*/
+#box {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+
+    border: 5px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    background-color: rgb(53, 53, 53);
+}
+#box input {
+    width: 300px;
+    display: block;
+    margin: 25px auto 15px auto;
+    padding: 3px 8px;
+
+    color: rgb(34, 34, 34);
+    border-radius: 2px;
+    border: 2px solid rgb(85, 85, 85);
+    font-size: 25px;
+    background-color: rgb(95, 95, 95);
+    outline: none;
+}
+
+#requirements {
+    margin: 10px 30px;
+}
+
+#rating {
+    margin: 15px 15px 25px 20px;
 }
