@@ -1,59 +1,62 @@
 /*Font Imports*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 /*Universal Rules*/
 * {
-    margin: 0;
-    padding: 0;
-    border: 0px solid red;
+  margin: 0;
+  padding: 0;
+  border: 0px solid red;
 }
 body {
-    background-color: rgb(31, 31, 31);
-    font-family: "Roboto Mono";
-    height: 600px;
+  background-color: #131313;
+  font-family: "Roboto Mono";
 }
 
 /*Title Rules*/
 #title {
-    color: rgb(189, 189, 189);
-    margin-top: 25vh;
-    margin-bottom: 20px;
-    font-size: 40px;
-    text-align: center;
-    text-decoration: underline;
+  color: #c6bba9;
+  margin-top: 20vh;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: underline;
 }
 
 /*Box Rules*/
 #box {
-    display: block;
-    margin: 0 auto;
-    width: 500px;
+  display: block;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 35rem;
 
-    border: 5px solid rgb(44, 44, 44);
-    border-radius: 10px;
-    background-color: rgb(53, 53, 53);
+  border: 0.7rem solid #7f7462;
+  border-radius: 2rem;
+  background-color: #252625;
+  color: #f4ead9;
 }
 #box input {
-    width: 300px;
-    display: block;
-    margin: 25px auto 15px auto;
-    padding: 3px 8px;
+  width: 20rem;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem 1rem;
 
-    color: rgb(34, 34, 34);
-    border-radius: 2px;
-    border: 2px solid rgb(85, 85, 85);
-    font-size: 25px;
-    background-color: rgb(95, 95, 95);
-    outline: none;
+  font-family: "Roboto Mono";
+  color: #d3c9b9;
+  border-radius: 0.5rem;
+  border: 0.4rem solid #7f7462;
+  font-size: 1.75rem;
+  background-color: #3c3d3c;
+  outline: none;
 }
 
 #requirements {
-    margin: 10px 30px;
+  margin: 2rem 2rem;
+  font-size: 1.2rem;
 }
 .requirement-symbol {
-    color: rgb(216, 76, 76);
+  color: #c76159;
 }
 
-#rating {
-    margin: 15px 15px 25px 20px;
+.rating {
+  margin: 0.25rem 1.25rem;
 }
